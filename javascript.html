@@ -7,32 +7,31 @@
 </head>
 <body>
 
-    <!-- Ejemplo 1: Cambiar texto y estilos -->
     <h1 id="titulo">Hola</h1>
     <button id="btnCambiar">Cambiar texto</button>
 
     <hr>
 
-    <!-- Ejemplo 2: Agregar elementos a una lista -->
     <ul id="lista"></ul>
     <button id="btnAgregar">Agregar elemento</button>
 
     <hr>
 
-    <!-- Ejemplo 3: Evento de clic simple -->
     <button id="btnAlerta">Haz clic aquí</button>
 
     <hr>
 
-    <!-- Ejemplo 4: Formulario -->
     <form id="formulario">
         <input id="nombre" type="text" placeholder="Escribe tu nombre" />
         <button type="submit">Guardar</button>
     </form>
 
-    <!-- Todo el JavaScript unificado en un solo bloque -->
+    <hr>
+  
+    <p>Última tecla presionada: <strong id="infoTecla">ninguna</strong></p>
+
     <script>
-        // 1. Cambiar texto y estilos del título
+        
         const titulo = document.getElementById("titulo");
         const btnCambiar = document.getElementById("btnCambiar");
         
@@ -42,7 +41,6 @@
             titulo.style.fontSize = "25px";
         });
 
-        // 2. Agregar elementos a la lista
         const lista = document.getElementById("lista");
         const btnAgregar = document.getElementById("btnAgregar");
         
@@ -52,7 +50,6 @@
             lista.appendChild(li);
         });
 
-        // 3. Botón de alerta y consola
         const btnAlerta = document.getElementById("btnAlerta");
         
         btnAlerta.addEventListener("click", () => {
@@ -60,7 +57,6 @@
             alert("¡Botón presionado!");
         });
 
-        // 4. Manejo del formulario
         const formulario = document.getElementById("formulario");
         
         formulario.addEventListener("submit", (evento) => {
@@ -69,6 +65,14 @@
             
             alert("Dato guardado!");
             console.log("Nombre:", nombreInput);
+        });
+
+        const infoTecla = document.getElementById("infoTecla");
+
+        document.addEventListener("keydown", (evento) => {
+            console.log("Tecla presionada:", evento.key);
+            
+            infoTecla.textContent = evento.key;
         });
     </script>
 
