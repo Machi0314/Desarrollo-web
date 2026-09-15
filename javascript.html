@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prácticas de DOM</title>
+</head>
+<body>
+
+    <!-- Ejemplo 1: Cambiar texto y estilos -->
+    <h1 id="titulo">Hola</h1>
+    <button id="btnCambiar">Cambiar texto</button>
+
+    <hr>
+
+    <!-- Ejemplo 2: Agregar elementos a una lista -->
+    <ul id="lista"></ul>
+    <button id="btnAgregar">Agregar elemento</button>
+
+    <hr>
+
+    <!-- Ejemplo 3: Evento de clic simple -->
+    <button id="btnAlerta">Haz clic aquí</button>
+
+    <hr>
+
+    <!-- Ejemplo 4: Formulario -->
+    <form id="formulario">
+        <input id="nombre" type="text" placeholder="Escribe tu nombre" />
+        <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Todo el JavaScript unificado en un solo bloque -->
+    <script>
+        // 1. Cambiar texto y estilos del título
+        const titulo = document.getElementById("titulo");
+        const btnCambiar = document.getElementById("btnCambiar");
+        
+        btnCambiar.addEventListener("click", () => {
+            titulo.textContent = "Texto cambiado con JavaScript";
+            titulo.style.color = "blue";
+            titulo.style.fontSize = "25px";
+        });
+
+        // 2. Agregar elementos a la lista
+        const lista = document.getElementById("lista");
+        const btnAgregar = document.getElementById("btnAgregar");
+        
+        btnAgregar.addEventListener("click", () => {
+            const li = document.createElement("li");
+            li.textContent = "Hola amigos";
+            lista.appendChild(li);
+        });
+
+        // 3. Botón de alerta y consola
+        const btnAlerta = document.getElementById("btnAlerta");
+        
+        btnAlerta.addEventListener("click", () => {
+            console.log("Se hizo clic");
+            alert("¡Botón presionado!");
+        });
+
+        // 4. Manejo del formulario
+        const formulario = document.getElementById("formulario");
+        
+        formulario.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+            const nombreInput = document.getElementById("nombre").value;
+            
+            alert("Dato guardado!");
+            console.log("Nombre:", nombreInput);
+        });
+    </script>
+
+</body>
+</html>
