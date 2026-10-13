@@ -60,6 +60,19 @@ body {
   z-index: 1;
 }
 
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.brand-subtitle {
+  color: #c1d8f2;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+
 .brand-mark {
   width: 31px;
   height: 31px;
