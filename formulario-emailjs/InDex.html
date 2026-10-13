@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b70">
+  <meta name="description" content="Formulario de contacto con envío de correo mediante EmailJS.">
+  <title>Contacto | Mensaje por correo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="layout">
+    <section class="intro" aria-labelledby="intro-title">
+      <a class="brand" href="#contacto" aria-label="Ir al formulario">
+        <span class="brand-mark" aria-hidden="true">J</span><span>JUAN ALMEYDA<span class="brand-dot">.</span></span>
+      </a>
+      <div class="intro-copy">
+        <p class="eyebrow"><span></span> FORMULARIO DE CONTACTO</p>
+        <h1 id="intro-title">Formulario de contacto <em>de Juan Almeyda</em></h1>
+        <p class="intro-text">Envíanos un mensaje y te contactaremos pronto.</p>
+      </div>
+      <div class="intro-footer"><span class="footer-line"></span><span>RESPUESTA POR CORREO ELECTRÓNICO</span></div>
+      <div class="decor decor-one" aria-hidden="true"></div><div class="decor decor-two" aria-hidden="true"></div>
+    </section>
+
+    <section class="form-panel" id="contacto" aria-labelledby="form-title">
+      <div class="panel-top"><span class="step">01 <span>/ 01</span></span><span class="secure"><span aria-hidden="true">●</span> FORMULARIO SEGURO</span></div>
+      <div class="form-heading"><p class="eyebrow">ESCRÍBEME</p><h2 id="form-title">Envíame un mensaje</h2><p>Los campos marcados con <b>*</b> son obligatorios.</p></div>
+
+      <form id="contact-form" novalidate>
+        <div class="field-row">
+          <div class="field"><label for="from_name">Nombre completo <b>*</b></label><input id="from_name" name="from_name" type="text" autocomplete="name" placeholder="Ej. Alex Rivera" maxlength="100" required><small class="field-error" id="name-error"></small></div>
+          <div class="field"><label for="reply_to">Correo electrónico <b>*</b></label><input id="reply_to" name="reply_to" type="email" autocomplete="email" placeholder="tu@correo.com" maxlength="254" required><small class="field-error" id="email-error"></small></div>
+        </div>
+        <div class="field"><label for="subject">Asunto <b>*</b></label><input id="subject" name="subject" type="text" placeholder="¿Sobre qué quieres conversar?" maxlength="120" required><small class="field-error" id="subject-error"></small></div>
+        <div class="field"><label for="message">Tu mensaje <b>*</b></label><textarea id="message" name="message" rows="5" placeholder="Escribe aquí los detalles de tu consulta…" maxlength="3000" required></textarea><div class="textarea-meta"><small class="field-error" id="message-error"></small><span id="char-count">0 / 3000</span></div></div>
+        <label class="consent"><input id="consent" name="consent" type="checkbox" required><span class="checkmark" aria-hidden="true"></span><span>Acepto que utilicen mis datos para responder a este mensaje. <b>*</b></span></label>
+        <small class="field-error consent-error" id="consent-error"></small>
+        <button class="submit-button" id="submit-button" type="submit"><span class="button-label">Enviar mensaje</span><span class="button-icon" aria-hidden="true">↗</span></button>
+        <div class="status" id="form-status" role="status" aria-live="polite" hidden></div>
+      </form>
+      <footer class="panel-footer"><span>© <span id="year"></span> MENSAJERÍA</span><span>HECHO PARA CONECTAR <span class="heart">✳</span></span></footer>
+    </section>
+  </main>
+</body>
+</html>
